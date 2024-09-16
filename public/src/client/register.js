@@ -7,6 +7,7 @@ define('forum/register', [
     const Register = {};
     let validationError = false;
     const successIcon = '';
+    console.log('Running');
 
     Register.init = function () {
         const username = $('#username');
@@ -131,7 +132,7 @@ define('forum/register', [
                 if (results.every(obj => obj.status === 'rejected')) {
                     showSuccess(username_notify, successIcon);
                 } else {
-                    showError(username_notify, '[[error:username-taken]]');
+                    showError(username_notify, `[[error:username-taken]] ${username}_1`);
                 }
 
                 callback();
